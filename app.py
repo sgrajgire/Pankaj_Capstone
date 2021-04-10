@@ -15,7 +15,6 @@ sentiment_df = pd.read_csv('./Input_Data/clean_df.csv')
 sentiment_model_file = open('./Input_Data/best_ML_model_save.pkl', 'rb')
 sentiment_model = pickle.load(sentiment_model_file)
 
-
 tfidf_file = open('./Input_Data/tfidf_vector.pkl', 'rb')
 tfidf_vector = pickle.load(tfidf_file)
 

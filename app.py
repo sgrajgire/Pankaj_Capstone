@@ -31,12 +31,12 @@ def predict_recommendation():
         # check for empty user name
         if len(username) == 0:
             infotext = "Invalid user! please enter valid user name."
-            return render_template('view.html', info=infotext, data=out_data, headings=['Index','Product'])
+            return render_template('index.html', info=infotext, data=out_data, headings=['Index','Product'])
                 
         # check for valid username
         if username not in user_reco_matrix.index:
             infotext = "Entered user name is not available. Please enter valid user name!"
-            return render_template('view.html', info=infotext, data=out_data, headings=['Index','Product'])
+            return render_template('index.html', info=infotext, data=out_data, headings=['Index','Product'])
 
         product_ids = user_reco_matrix.loc[username].sort_values(ascending=False)[:20]
         product_map = pd.DataFrame(review_df[['id','name']]).drop_duplicates()
@@ -63,9 +63,9 @@ def predict_recommendation():
         # product_map[product_map['name'] == out]['id']
         out_data = [[index, out] for index, out in enumerate (product_pivot.head(5).index, 1)]
         infotext = "Top 5 Recommended products for \"" + username +  "\""
-        return render_template('view.html', info=infotext, data=out_data, headings=['Index','Product'])  
+        return render_template('index.html', info=infotext, data=out_data, headings=['Index','Product'])  
     else:
-        return render_template('view.html')  
+        return render_template('index.html')  
 
 
 if __name__ == '__main__':

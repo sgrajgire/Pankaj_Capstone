@@ -1,4 +1,4 @@
-# Capstone_RecoSystem
+# Pankaj_Capstone
 Sentiment-based product recommendation system, this is an upGgrad assigned capstone project
 
 Explanation for each file present current directory.
